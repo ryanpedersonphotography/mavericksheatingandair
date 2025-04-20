@@ -4,9 +4,39 @@
 
 This repository contains a static HTML website exported from WordPress. To deploy it on Netlify, follow these instructions:
 
-### Preparation
+### Quick Start: Use the Deployment Helper Script
 
-1. **Run the rename script locally before deploying:**
+We've created a helper script that will guide you through the entire process:
+
+1. **Make the script executable:**
+
+   ```bash
+   chmod +x deploy-to-netlify.sh
+   ```
+
+2. **Run the deployment helper script:**
+
+   ```bash
+   ./deploy-to-netlify.sh
+   ```
+
+   This script will:
+   - Check for files with question marks in their names
+   - Run the rename script to fix these files
+   - Verify that all problematic files have been fixed
+   - Provide instructions for committing and deploying
+
+### Manual Process: Rename Files with Question Marks
+
+Netlify will reject any files with question marks in their names. If you prefer to do this manually:
+
+1. **Make the rename script executable:**
+
+   ```bash
+   chmod +x rename-files.sh
+   ```
+
+2. **Run the rename script:**
 
    ```bash
    ./rename-files.sh
@@ -16,7 +46,21 @@ This repository contains a static HTML website exported from WordPress. To deplo
    - Rename WordPress page files with question marks in their names (e.g., `index.html?p=215.html` to `page-215.html`)
    - Rename asset files with version parameters in wp-content, wp-includes, and wp-json directories
 
-2. **Commit the renamed files to your repository**
+3. **Verify that all files with question marks have been renamed:**
+
+   ```bash
+   find . -name "*\?*" -type f
+   ```
+
+   This command should return no results if all files have been renamed successfully.
+
+4. **Commit and push the renamed files to your repository:**
+
+   ```bash
+   git add .
+   git commit -m "Renamed files with question marks for Netlify compatibility"
+   git push
+   ```
 
 ### Netlify Configuration
 

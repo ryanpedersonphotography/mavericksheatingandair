@@ -1,5 +1,5 @@
 [build]
-  # This is a static site, so no build command is needed
+  # Process any remaining files with question marks (though you should run rename-files.sh locally first)
   command = "bash ./netlify-build.sh"
   # Publish from the root directory
   publish = "."
@@ -9,6 +9,19 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+# Handle WordPress page URLs with query parameters
+[[redirects]]
+  from = "/index.html?p=:id"
+  to = "/page-:id.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/index.html?p=:id.html"
+  to = "/page-:id.html"
+  status = 301
+  force = true
 
 # Set cache headers for static assets
 [[headers]]
