@@ -1,0 +1,63 @@
+# Redirects for WordPress query parameter pages
+
+# Handle WordPress page URLs with query parameters
+/index.html?p=215.html /page-215.html 301
+/index.html?p=244.html /page-244.html 301
+/index.html?p=325.html /page-325.html 301
+/index.html?p=351.html /page-351.html 301
+/index.html?p=384.html /page-384.html 301
+/index.html?p=391.html /page-391.html 301
+/index.html?p=394.html /page-394.html 301
+/index.html?p=397.html /page-397.html 301
+/index.html?p=401.html /page-401.html 301
+/index.html?p=403.html /page-403.html 301
+/index.html?p=405.html /page-405.html 301
+/index.html?p=407.html /page-407.html 301
+/index.html?p=409.html /page-409.html 301
+/index.html?p=411.html /page-411.html 301
+/index.html?p=413.html /page-413.html 301
+/index.html?p=415.html /page-415.html 301
+/index.html?p=426.html /page-426.html 301
+/index.html?p=428.html /page-428.html 301
+/index.html?p=430.html /page-430.html 301
+/index.html?p=432.html /page-432.html 301
+/index.html?p=439.html /page-439.html 301
+/index.html?p=441.html /page-441.html 301
+/index.html?p=443.html /page-443.html 301
+/index.html?p=445.html /page-445.html 301
+/index.html?p=447.html /page-447.html 301
+/index.html?p=449.html /page-449.html 301
+/index.html?p=451.html /page-451.html 301
+/index.html?p=453.html /page-453.html 301
+/index.html?p=455.html /page-455.html 301
+/index.html?p=532.html /page-532.html 301
+/index.html?p=534.html /page-534.html 301
+/index.html?p=536.html /page-536.html 301
+/index.html?p=540.html /page-540.html 301
+/index.html?p=542.html /page-542.html 301
+/index.html?p=544.html /page-544.html 301
+/index.html?p=546.html /page-546.html 301
+/index.html?p=550.html /page-550.html 301
+/index.html?p=556.html /page-556.html 301
+/index.html?p=558.html /page-558.html 301
+/index.html?p=560.html /page-560.html 301
+/index.html?p=562.html /page-562.html 301
+/index.html?p=564.html /page-564.html 301
+/index.html?p=566.html /page-566.html 301
+/index.html?p=568.html /page-568.html 301
+/index.html?p=569.html /page-569.html 301
+/index.html?p=572.html /page-572.html 301
+/index.html?p=574.html /page-574.html 301
+/index.html?p=1138.html /page-1138.html 301
+/index.html?p=1290.html /page-1290.html 301
+/index.html?p=1304.html /page-1304.html 301
+/index.html?p=1306.html /page-1306.html 301
+/index.html?p=1431.html /page-1431.html 301
+/index.html?p=1432.html /page-1432.html 301
+/index.html?p=1433.html /page-1433.html 301
+/index.html?p=1434.html /page-1434.html 301
+/index.html?p=1435.html /page-1435.html 301
+/index.html?p=1442.html /page-1442.html 301
+
+# Add a catch-all redirect for any other query parameters
+/* /index.html 200
