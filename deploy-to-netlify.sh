@@ -7,6 +7,10 @@ echo ""
 echo "This script will help you prepare your site for Netlify deployment."
 echo ""
 
+# Step 1: Rename files with question marks
+echo "STEP 1: Renaming files with question marks"
+echo "----------------------------------------"
+
 # Check if there are files with question marks
 question_mark_files=$(find . -type f -name "*\?*" | wc -l)
 
@@ -37,16 +41,28 @@ if [ "$question_mark_files" -gt 0 ]; then
     echo "SUCCESS: All files with question marks have been renamed."
   fi
 else
-  echo "No files with question marks found. Your site is ready for Netlify deployment."
+  echo "No files with question marks found. Proceeding to next step."
 fi
 
 echo ""
+echo "STEP 2: Fixing CSS and JavaScript references in HTML files"
+echo "-------------------------------------------------------"
+
+# Make fix-css-references.sh executable
+chmod +x fix-css-references.sh
+
+echo "Running fix-css-references.sh to update HTML references..."
+./fix-css-references.sh
+
+echo ""
+echo "STEP 3: Deployment"
+echo "----------------"
 echo "Next steps:"
 echo "1. Commit and push these changes to your GitHub repository:"
 echo "   git add ."
-echo "   git commit -m \"Renamed files for Netlify compatibility\""
+echo "   git commit -m \"Prepared files for Netlify deployment\""
 echo "   git push"
 echo ""
 echo "2. Deploy to Netlify by connecting your GitHub repository"
 echo ""
-echo "Your site should now deploy successfully on Netlify!"
+echo "Your site should now deploy successfully on Netlify with proper styling!"

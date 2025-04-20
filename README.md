@@ -23,12 +23,17 @@ We've created a helper script that will guide you through the entire process:
    This script will:
    - Check for files with question marks in their names
    - Run the rename script to fix these files
+   - Fix CSS and JavaScript references in HTML files
    - Verify that all problematic files have been fixed
    - Provide instructions for committing and deploying
 
-### Manual Process: Rename Files with Question Marks
+### Manual Process: Step-by-Step Deployment
 
-Netlify will reject any files with question marks in their names. If you prefer to do this manually:
+If you prefer to do this manually:
+
+#### Step 1: Rename Files with Question Marks
+
+Netlify will reject any files with question marks in their names:
 
 1. **Make the rename script executable:**
 
@@ -54,13 +59,38 @@ Netlify will reject any files with question marks in their names. If you prefer 
 
    This command should return no results if all files have been renamed successfully.
 
-4. **Commit and push the renamed files to your repository:**
+#### Step 2: Fix CSS and JavaScript References
+
+After renaming the files, you need to update the HTML files to reference the renamed CSS and JS files:
+
+1. **Make the CSS fix script executable:**
+
+   ```bash
+   chmod +x fix-css-references.sh
+   ```
+
+2. **Run the CSS fix script:**
+
+   ```bash
+   ./fix-css-references.sh
+   ```
+
+   This script will:
+   - Find all HTML files in the project
+   - Update references to CSS and JS files with question marks
+   - Replace question marks with hyphens in the references
+
+#### Step 3: Commit and Deploy
+
+1. **Commit and push the changes to your repository:**
 
    ```bash
    git add .
-   git commit -m "Renamed files with question marks for Netlify compatibility"
+   git commit -m "Prepared files for Netlify deployment"
    git push
    ```
+
+2. **Deploy to Netlify by connecting your GitHub repository**
 
 ### Netlify Configuration
 
