@@ -1,0 +1,11 @@
+{
+  "name": "mavericks-heating-and-air",
+  "version": "1.0.0",
+  "description": "Mavericks Heating and Air website",
+  "scripts": {
+    "build": "echo 'No build required - static site'"
+  },
+  "dependencies": {},
+  "author": "",
+  "license": "ISC"
+}
